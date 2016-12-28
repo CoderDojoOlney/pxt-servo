@@ -1,0 +1,13 @@
+{
+    "name": "servo",
+    "description": "I2C servo motor attempt",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.cpp",
+        "main.ts"
+    ],
+    "public": true
+}
