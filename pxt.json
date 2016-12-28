@@ -6,12 +6,10 @@
     },
     "files": [
         "README.md",
-        "servo.ts",
-        "servo.cpp",
         "shims.d.ts",
         "enums.d.ts",
-        "extension.cpp",
-        "extension.ts"
+        "servo.ts",
+        "servo.cpp"
     ],
     "testFiles": [
         "tests.ts"
