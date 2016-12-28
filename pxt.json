@@ -9,5 +9,8 @@
         "main.cpp",
         "main.ts"
     ],
+    "testFiles": [
+        "tests.ts"
+    ],
     "public": true
 }
