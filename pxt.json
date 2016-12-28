@@ -7,7 +7,9 @@
     "files": [
         "README.md",
         "main.cpp",
-        "main.ts"
+        "main.ts",
+        "shims.d.ts",
+        "enums.d.ts"
     ],
     "testFiles": [
         "tests.ts"
