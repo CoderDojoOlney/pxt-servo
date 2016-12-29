@@ -41,7 +41,7 @@ namespace servo{
 
         let oldmode = read8(PCA9685_MODE1);        
         let newmode = (oldmode & 0x7F) | 0x10; // sleep
-        basic.showNumber(oldmode);
+        //basic.showNumber(oldmode);
 
         write8(PCA9685_MODE1, newmode); // go to sleep
         write8(PCA9685_PRESCALE, prescale); // set the prescaler
@@ -49,8 +49,8 @@ namespace servo{
         control.waitMicros(5000);
         write8(PCA9685_MODE1, oldmode | 0xa1);
 
-        let finalmode = read8(PCA9685_MODE1);        
-        basic.showNumber(finalmode);
+        //let finalmode = read8(PCA9685_MODE1);        
+        //basic.showNumber(finalmode);
     }
 
     /**
