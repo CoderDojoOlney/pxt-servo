@@ -21,7 +21,9 @@ namespace servo{
      **/
     //% blockId=olney_servo_init
     //% block="Init Servo board on Address %address" 
-    export function init(address: number=0x40) {
+    export function init(address: number = 0x40) {
+        
+        // TODO: Constrain the address, possibly add an enum
         _i2cAddr = address;
         write8(PCA9685_MODE1, 0x0);
     }
@@ -33,6 +35,7 @@ namespace servo{
     //% blockId=olney_servo_setPwmFreq
     //% block="Set PWM frequency to %freq"   
     export function setPWMFreq(freq: number) {
+        // Constrain the frequency
         let prescaleval = 25000000;
         prescaleval /= 4096;
         prescaleval /= freq;
@@ -60,6 +63,7 @@ namespace servo{
     //% block="Set PWM for servo %servo: | on %on, | off %off"    
     export function setPWM(servo: number, on: number, off: number) {
 
+        // TODO: Do not die, rather constrain the servo range        
         if (servo < 0 || servo > 15 )
             die();        
 
@@ -113,6 +117,7 @@ namespace servo{
         
     function write8(addr: number, val: number) {
 
+        // TODO: Do not die, but rather clamp the range        
         if (val < 0 || val > 0xff )
             die();   
         
