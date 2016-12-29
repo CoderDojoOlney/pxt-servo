@@ -9,7 +9,9 @@
         "shims.d.ts",
         "enums.d.ts",
         "servo.ts",
-        "servo.cpp"
+        "servo.cpp",
+        "extension.cpp",
+        "extension.ts"
     ],
     "testFiles": [
         "tests.ts"
