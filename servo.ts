@@ -2,19 +2,14 @@
 
 let PCA9685_MODE1 = 0x0
 let PCA9685_PRESCALE = 0xFE;
-// #define LED0_ON_L 0x6
-// #define LED0_ON_H 0x7
-// #define LED0_OFF_L 0x8
-// #define LED0_OFF_H 0x9
-
-let _i2cAddr = 0x40;
+let _i2cAddr = 0x0;
 let LED0_ON_L = 0x6;
 
 /**
- * A test comment
+ * Adafruit PCA9615 Servo board driver. 
  */
 //% color=270 weigth=10
-namespace olney{
+namespace servo{
 
     //% shim=pxtrt::panic
     function panic(code: number) { }
@@ -22,11 +17,11 @@ namespace olney{
     function die() { panic(142) }  
 
     /**
-     * Initialise the board with a I2C address
+     * Initialise the board with an I2C address
      **/
     //% blockId=olney_servo_init
-    //% block="Initialise board on Address %address" 
-    export function init(address: number) {
+    //% block="Init Servo board on Address %address" 
+    export function init(address: number=0x40) {
         _i2cAddr = address;
         write8(PCA9685_MODE1, 0x0);
     }
@@ -132,23 +127,4 @@ namespace olney{
         let val = pins.i2cReadNumber(_i2cAddr, NumberFormat.UInt8BE);
         return val;        
     }
-
-/*
-
-uint8_t Adafruit_PWMServoDriver::read8(uint8_t addr) {
-  WIRE.beginTransmission(_i2caddr);
-  WIRE.write(addr);
-  WIRE.endTransmission();
-
-  WIRE.requestFrom((uint8_t)_i2caddr, (uint8_t)1);
-  return WIRE.read();
-}
-
-void Adafruit_PWMServoDriver::write8(uint8_t addr, uint8_t d) {
-  WIRE.beginTransmission(_i2caddr);
-  WIRE.write(addr);
-  WIRE.write(d);
-  WIRE.endTransmission();
-}
-    */
 }
