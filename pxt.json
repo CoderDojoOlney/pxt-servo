@@ -1,17 +1,12 @@
 {
     "name": "servo",
-    "description": "I2C servo motor attempt",
+    "description": "I2C servo motor for the AdaFruit PCA9685",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "shims.d.ts",
-        "enums.d.ts",
-        "servo.ts",
-        "servo.cpp",
-        "extension.cpp",
-        "extension.ts"
+        "servo.ts"
     ],
     "testFiles": [
         "tests.ts"

@@ -3,9 +3,8 @@ bbc:microbit custom pxt package for Adafruit I2C servo
 
 # Servo package
 
-A set of functions to work with CoderDojo Olney projects
-
-
+A simple set of control functions for the AdaFruit PCA9615 16 channel Servo board
+using I2C
 
 ## Supported targets
 
