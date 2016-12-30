@@ -5,12 +5,27 @@ let PCA9685_PRESCALE = 0xFE;
 let _i2cAddr = 0x0;
 let LED0_ON_L = 0x6;
 
+/**
+ * Permissible addresses for the board I2C address
+ */
 enum boardId
 {
     //% blockId="id_40" block="0x40"
     id_0x40 = 0x40,
     //% blockId="id_41" block="0x41"
     id_0x41 = 0x41,
+    //% blockId="id_42" block="0x42"
+    id_0x42 = 0x42,
+    //% blockId="id_43" block="0x43"
+    id_0x43 = 0x43,
+    //% blockId="id_44" block="0x44"
+    id_0x44 = 0x44,
+    //% blockId="id_45" block="0x45"
+    id_0x45 = 0x45,
+    //% blockId="id_46" block="0x46"
+    id_0x46 = 0x46,
+    //% blockId="id_47" block="0x47"
+    id_0x47 = 0x47,
 
 }    
 
@@ -19,11 +34,6 @@ enum boardId
  */
 //% color=270 weight=10
 namespace servo{
-
-    //% shim=pxtrt::panic
-    function panic(code: number) { }
-
-    function die() { panic(142) }  
 
     /**
      * Initialise the board with an I2C address. 
