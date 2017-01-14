@@ -1,5 +1,5 @@
 {
-    "name": "Servo Driver",
+    "name": "servodriver",
     "description": "I2C servo motor driver for the AdaFruit PCA9685. Drive 16 servos!",
     "dependencies": {
         "core": "*"
