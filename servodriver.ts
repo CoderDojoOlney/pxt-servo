@@ -33,7 +33,7 @@ enum boardId
  * Adafruit PCA9615 Servo board driver. 
  */
 //% color=270 weight=10
-namespace servo{
+namespace servodriver{
 
     /**
      * Initialise the board with an I2C address. 

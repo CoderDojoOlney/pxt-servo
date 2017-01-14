@@ -1,12 +1,12 @@
 {
-    "name": "servo",
-    "description": "I2C servo motor for the AdaFruit PCA9685",
+    "name": "servodriver",
+    "description": "I2C servo motor driver for the AdaFruit PCA9685",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "servo.ts"
+        "servodriver.ts"
     ],
     "testFiles": [
         "tests.ts"

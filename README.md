@@ -1,5 +1,5 @@
 # servo
-micro:bit custom pxt package for Adafruit I2C servo 
+micro:bit custom pxt package for Adafruit I2C servo board
 
 # Servo package
 
