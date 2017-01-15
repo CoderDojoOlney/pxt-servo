@@ -1,6 +1,6 @@
 {
     "name": "servodriver",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "description": "servo motor driver for the AdaFruit PCA9685 using I2C. Drive 16 servos!",
     "dependencies": {
         "core": "*"
