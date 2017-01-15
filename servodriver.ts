@@ -27,6 +27,12 @@ enum boardId
     //% blockId="id_47" block="0x47"
     id_0x47 = 0x47,
 
+} 
+
+enum servoDirection
+{
+    normal = 0,
+    inverted = 1,
 }    
 
 /**
@@ -40,7 +46,7 @@ namespace servodriver{
      **/
     //% blockId=olney_servo_init weight=100
     //% block="Init Servo board on Address %address" 
-    export function init(address: boardId) {
+    export function init(address: boardId = boardId.id_0x40) {
         _i2cAddr = address;
         write8(PCA9685_MODE1, 0x0);
     }
@@ -51,7 +57,7 @@ namespace servodriver{
      **/
     //% blockId=olney_servo_setPwmFreq weight=50
     //% block="Set PWM frequency to %freq" Hz  
-    export function setPWMFreq(freq: number) {
+    export function setPWMFreq(freq: number = 60) {
         // Constrain the frequency
         let prescaleval = 25000000;
         prescaleval /= 4096;
@@ -75,20 +81,21 @@ namespace servodriver{
 
 
     /**
-     * Sets pin without having to deal with on/off tick placement and properly handles
-     * a zero value as completely off.  Optional invert parameter supports inverting
-     * the pulse for sinking to ground.  Val should be a value from 0 to 4095 inclusive.
+     * Moves the servo to a position. Servo can be a value between 0 and 15.
+     * Optional invert parameter supports inverting
+     * the pulse for sinking to ground.
+     * Val should be a value from 0 to 4095 inclusive.
      **/
     //% blockId=olney_servo_setPin weight=30
-    //% block="Set servo %servo: | to value %val, | Invert? %invert"    
-    export function setPin(servo: number, val: number, invert: boolean)
+    //% block="Move servo %servo: | to position %val, | Invert? %invert"    
+    export function moveTo(servo: number, val: number, invert: servoDirection)
     {
         if (servo < 0 || servo > 15)
             return;
         
         // Clamp value between 0 and 4095 inclusive.
         val = Math.clamp(0, 4095, val);
-        if (invert) {
+        if (invert == servoDirection.inverted) {
             if (val == 0) {
                 // Special value for signal fully on.
                 setPWM(servo, 4096, 0);

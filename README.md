@@ -17,9 +17,9 @@ Note: the extreme values of 0 and 4096 will probably be out of range for the ser
 ```javascript
 servodriver.init(boardId.id0x40)
 servodriver.setPWMFreq(60)
-
-servodriver.setPin(0, 400, false)
-servodriver.setPin(0, 1000, false)
+basic.pause(1000)
+servodriver.moveTo(0, 400, servoDirection.normal)
+servodriver.moveTo(0, 1000, servoDirection.normal)
 ```
 
 ## Supported targets

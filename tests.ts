@@ -3,7 +3,7 @@
 servodriver.init(64)
 servodriver.setPWMFreq(60)
 servodriver.setPWM(0, 0, 150)
-servodriver.setPin(1, 1000, false)
+servodriver.moveTo(1, 1000, servoDirection.normal)
 servodriver.setPWM(0, 0, 300)
-servodriver.setPin(1, 300, false)
+servodriver.moveTo(1, 300, servoDirection.normal)
 
